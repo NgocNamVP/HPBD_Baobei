@@ -11,6 +11,9 @@
 </head>
 
 <body>
+    <audio autoplay id="myAudio">
+        <source src="audio.mp3" type="audio/mpeg">
+    </audio>
     <div class="parent">
         <canvas id="canvas"></canvas>
         <section class="above-fold">
@@ -44,9 +47,19 @@
         <h4>Happy Birthday Make A Wish. Dear brother, hope you receive everything you wish for this year. You deserve
             the best! Thanks for being such a great brother.💘</h4>
     </div>
+    <audio controls>
+        <source src="duong-dan-den-file-nhac-cua-ban.mp3" type="audio/mpeg">
+        Trình duyệt của bạn không hỗ trợ phần tử âm thanh.
 
 </body>
 <script src="canvas.js"></script>
 <script src="present.js"></script>
-
+<script>
+    window.addEventListener('load', () => {
+        const audio = document.getElementById('myAudio');
+        audio.play().catch(error => {
+            console.log('Trình duyệt đã chặn tự động phát:', error);
+        });
+    });
+</script>
 </html>
